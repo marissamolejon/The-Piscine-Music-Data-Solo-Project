@@ -1,8 +1,92 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script type="module" src="script.mjs"></script>
-  </head>
-  <body>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Data Project</title>
+</head>
+
+<body>
+<header>
+  <h1>Music Data</h1>
+  <p>Select a user to view listening statistics.</p>
+</header>
+
+<main>
+  <section aria-labelledby="user-selection-title">
+    <h2 id="user-selection-title">Select a user</h2>
+
+    <label for="user-select">User</label>
+     <select id="user-select">
+      <option value="">Choose a user</option>
+      <option value="user1">User 1</option>
+      <option value="user2">User 2</option>
+      <option value="user3">User 3</option>
+      <option value="user4">User 4</option>
+    </select>
+
+  </section>
+    <section id="results" aria-live="polite">
+
+    <h2>User Listening Insights</h2>
+
+    <p id="no-data-message" hidden>
+      This user didn't listen to any songs.
+    </p>
+
+    <dl>
+      <div id="most-song-count" hidden>
+        <dt>Most listened song (count)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="most-song-time" hidden>
+        <dt>Most listened song (listening time)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="most-artist-count" hidden>
+        <dt>Most listened artist (count)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="most-artist-time" hidden>
+        <dt>Most listened artist (listening time)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="friday-song-count" hidden>
+        <dt>Most listened Friday night song (count)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="friday-song-time" hidden>
+        <dt>Most listened Friday night song (time)</dt>
+        <dd></dd>
+      </div>
+
+      <div id="longest-streak" hidden>
+        <dt>Longest streak song</dt>
+        <dd></dd>
+      </div>
+
+      <div id="everyday-songs" hidden>
+        <dt>Songs listened to every day</dt>
+        <dd></dd>
+      </div>
+
+      <div id="top-genres" hidden>
+        <dt>Top genres</dt>
+        <dd></dd>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <p>Music Data Project</p>
+</footer>
+
+<script type="module" src="data.mjs"></script>
+</body>
 </html>
