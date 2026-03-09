@@ -1,0 +1,154 @@
+/* Google font (add the link in HTML head) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg,#22c55e,#06b6d4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main container */
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Select area */
+
+label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  background: #1e293b;
+  color: white;
+  outline: none;
+  margin-bottom: 30px;
+  transition: all .2s ease;
+}
+
+select:hover {
+  background: #334155;
+}
+
+/* Results grid */
+
+#results {
+  display: grid;
+  gap: 18px;
+}
+
+/* Insight cards */
+
+.question-block {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow */
+
+.question-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.question-block:hover::before {
+  opacity: 1;
+}
+
+.question-block:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Titles */
+
+.question-block h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Data */
+
+.question-block p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Empty state */
+
+#results > p {
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+  color: #94a3b8;
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .question-block p {
+    font-size: 1rem;
+  }
+
+}
