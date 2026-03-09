@@ -4,5 +4,13 @@
   "main": "script.js",
   "scripts": {
     "test": "node common.test.mjs"
+  },
+  "description": "A common task in software is to take some data, process it in some way, and present it usefully to someone.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }
