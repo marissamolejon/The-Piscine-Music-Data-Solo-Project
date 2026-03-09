@@ -4,6 +4,7 @@ import { getMostOften, isFridayNight, calculateLongestStreak, getEveryDaySongs }
 const userSelect = document.getElementById("userSelect");
 const resultsArea = document.getElementById("results");
 
+
 function display(title, answer) {
   const card = document.createElement("section");
   card.className = "question-block";
@@ -16,14 +17,20 @@ function display(title, answer) {
   resultsArea.appendChild(card);
 }
 
+
 function showEmptyMessage() {
-  resultsArea.innerHTML = `
-    <p>This user has no listening history.</p>
-  `;
+  resultsArea.innerHTML = `<p>This user has no listening history.</p>`;
 }
 
+
 function renderAllAnswers(events) {
+
   resultsArea.innerHTML = "";
+
+  if (!events || events.length === 0) {
+    showEmptyMessage();
+    return;
+  }
 
   events.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
 
@@ -65,33 +72,37 @@ function renderAllAnswers(events) {
     );
   }
 
-// Longest streak song
-const longestStreak = calculateLongestStreak(events);
 
-if (longestStreak) {
-  const song = getSong(longestStreak.id);
+  // Longest streak song
+  const longestStreak = calculateLongestStreak(events);
 
-  display(
-    "Longest streak song",
-    `${song.artist} - ${song.title} (${longestStreak.length} plays in a row)`
-  );
-}
+  if (longestStreak) {
+    const song = getSong(longestStreak.id);
 
-// Songs played every active day
-const everydaySongs = getEveryDaySongs(events);
+    display(
+      "Longest streak song",
+      `${song.artist} - ${song.title} (${longestStreak.length} plays in a row)`
+    );
+  }
 
-if (everydaySongs.length > 0) {
-  const songs = everydaySongs
-    .map(id => {
-      const song = getSong(id);
-      return `${song.artist} - ${song.title}`;
-    })
-    .join(", ");
 
-  display("Songs played every day", songs);
-} else {
-  display("Songs played every day", "None");
-}
+  // Songs played every active day
+  const everydaySongs = getEveryDaySongs(events);
+
+  if (everydaySongs.length > 0) {
+    const songs = everydaySongs
+      .map(id => {
+        const song = getSong(id);
+        return `${song.artist} - ${song.title}`;
+      })
+      .join(", ");
+
+    display("Songs played every day", songs);
+
+  } else {
+    display("Songs played every day", "None");
+  }
+
 
   // Top genres
   const genreStats = {};
@@ -109,13 +120,40 @@ if (everydaySongs.length > 0) {
   display("Top genres", topGenres.join(", "));
 }
 
+
 function populateUsers() {
+
   const ids = getUserIDs();
 
   ids.forEach(id => {
+
     const option = document.createElement("option");
     option.value = id;
-    option.textContent = ` ${id}`;
+    option.textContent = id;
+
     userSelect.appendChild(option);
   });
 }
+
+
+userSelect.addEventListener("change", () => {
+
+  const userId = userSelect.value;
+
+  if (!userId) {
+    resultsArea.innerHTML = "";
+    return;
+  }
+
+  const events = getListenEvents(userId);
+
+  if (!events || events.length === 0) {
+    showEmptyMessage();
+    return;
+  }
+
+  renderAllAnswers(events);
+});
+
+
+populateUsers();
