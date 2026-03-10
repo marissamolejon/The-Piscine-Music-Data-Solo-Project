@@ -61,4 +61,4 @@ Bonus points (which don't mean anything):
 The goal is for the site to achieve a Lighthouse accessibility score of 100.
 
 ## Testing
-At least one meaningful function in the project includes unit tests using Jest.|
+At least one meaningful function in the project includes unit tests using Jest.
