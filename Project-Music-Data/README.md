@@ -51,9 +51,9 @@ Bonus points (which don't mean anything):
 
 ## Screenshot
 
-https://i.postimg.cc/ht8t7MXQ/Screenshot-2026-03-10-at-10-47-30.png
-https://i.postimg.cc/K4Sm1gFw/Screenshot-2026-03-09-at-23-34-14.png
-https://i.postimg.cc/Z5LyhJxW/Screenshot-2026-03-10-at-10-16-23.png
+(https://i.postimg.cc/ht8t7MXQ/Screenshot-2026-03-10-at-10-47-30.png)
+(https://i.postimg.cc/K4Sm1gFw/Screenshot-2026-03-09-at-23-34-14.png)
+(https://i.postimg.cc/Z5LyhJxW/Screenshot-2026-03-10-at-10-16-23.png)
 
 ## Accessibility
 The goal is for the site to achieve a Lighthouse accessibility score of 100.
