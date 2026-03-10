@@ -33,7 +33,7 @@ test('returns the most frequent item', () => {
 
 2. Ensures the function handles empty input safely.
 
-```
+```javascript
 test('returns null for empty array', () => {
   expect(getMostOften([], e => e.song_id)).toBeNull();
 });
