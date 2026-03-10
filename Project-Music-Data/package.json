@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "node common.test.mjs"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "description": "A common task in software is to take some data, process it in some way, and present it usefully to someone.",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "jest": "^30.2.0"
   }
 }
+
