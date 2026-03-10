@@ -1,37 +1,15 @@
-# Music data project
+# Piscine: Music Data Project
+#### By Marissa Molejon (@marissamolejon) 
 
-A common task in software is to take some data, process it in some way, and present it usefully to someone.
+## LIVE DEMO
+https://piscine-music-data-project.netlify.app/
 
-We have supplied a collection of data for you to analyse. Your task is to write code which processes this data and shows useful conclusions to a user.
+## Introduction
+### User Story
 
-Make a small HTML + JavaScript frontend which displays the answers to several questions, which are listed below.
+As someone who loves listening to music, I often wonder what my listening habits actually look like when viewed through data. For example, which songs or artists I return to the most, or whether my listening patterns change depending on the day or time.
 
-Some principles to remember throughout this project:
-
-1. This is a project about data processing, not UI. You should make a simple frontend to show the data in valid semantic HTML. No credit will be given for making prettier or more complicated frontend. You are allowed to use CSS, but you are strongly advised to focus on the logic, and only add styling when you are finished. You will not get any credit for styling.
-2. You should assume the data will change in the future, but will have the same schema. So you shouldn't pre-compute anything. Your code should always read the data and calculate results from scratch.
-
-We have provided a `data.js` file, which contains three functions to provide data for you to analyse. `data.js` is a file containing four functions:
-
-1. `getUserIDs()`: when called, returns an array of strings, each of which is a user ID.
-1. `getListenEvents(userID)`: when called, returns an array of objects, each of which contains information about a single time that the given user listened to a song. The listen events are sorted by when they happened, oldest to newest. The timestamps should be interpreted as in the user's current local time zone.
-2. `getSong(songID)`: when called with one string as an argument, returns an an object containing information about a single song.
-
-## Requirements
-
-This is an individual project. You are expected to work on it on your own. You can talk to other trainees and volunteers and get help and advice, but you should write all of the code yourself.
-
-You must submit both a link to your GitHub repo, and a link to the deployed website.
-
-Your website must be hosted on the internet, and must be automatically deployed when you merge changes to your GitHub repo.
-
-Your website must include a drop-down to select a user to display information for. When a user is selected, you must display answers to all of the questions for that user. If a question doesn't apply to that user, you should not show the question.
-
-You **must not** implement any kind of authentication. Just a drop-down to choose which user's information to display.
-
-Your GitHub repository must contain at least one unit test which demonstrates that your code works. End to end tests are optional. Testing via the DOM is optional.
-
-Every view of your website must be accessible. We will test this by making sure that "Snapshot" mode of Lighthouse gives 100% accessibility for any view we look at.
+This project was created to explore those kinds of questions. The website analyzes listening history data and presents insights about users’ music behavior. Friends can also explore the data by selecting different users from a dropdown menu to see how their listening patterns compare. 
 
 ## Questions to answer
 
@@ -43,11 +21,15 @@ Every view of your website must be accessible. We will test this by making sure 
 6. Are there any songs that, on each day the user listened to music, they listened to every day? If the answer is yes, you should show which one(s). If the answer is no, you should not show anything about this question.
 7. What were the user's top three genres to listen to by number of listens?
 
-## Supplied scaffolding
-
-In addition to `data.js`, we have supplied a few sample files in the repo to demonstrate how you can define functions in one file and use them from another file. Feel free to use these files in your solution if you want, or to just use them for inspiration for your own solution.
-
-Note that when running locally, in order to open a web page which uses modules, you must serve the directory over HTTP e.g. with https://www.npmjs.com/package/http-server - you can't open the `index.html` file using a `file://` URL.
+## Setup
+To install `jest`:
+```
+npm install jest
+```
+To install `http-server`:
+```
+npm install http-server
+```
 
 ## Rubric
 
@@ -67,15 +49,16 @@ Bonus points (which don't mean anything):
 * Re-using code between the "most often" questions (i.e. questions 1, 2, 3, 4).
 * End-to-end tests.
 
-Expected output data:
-| Question                     | User 1                                      | User 2                                                            | User 3                                                                                                               |
-| ---------------------------- | ------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Most listened song (count)   | The Swell Season - When Your Mind's Made Up | Frank Turner - I Still Believe                                    | Frank Turner - Be More Kind                                                                                          |
-| Most listened song (time)    | Faithless - Insomnia                        | Frank Turner - I Still Believe                                    | Faithless - Insomnia                                                                                                 |
-| Most listened artist (count) | Frank Turner                                | Frank Turner                                                      | Frank Turner                                                                                                         |
-| Most listened artist (time)  | Frank Turner                                | Frank Turner                                                      | Frank Turner                                                                                                         |
-| Friday night song (count)    | The Swell Season - When Your Mind's Made Up | Frank Turner - I Still Believe                                    | <no Friday listens - must not be displayed>                                                                          |
-| Friday night song (time)     | The Swell Season - When Your Mind's Made Up | Frank Turner - Photosynthesis                                     | <no Friday listens - must not be displayed>                                                                          |
-| Longest streak song          | The King Blues - I Got Love (length: 34)    | Frank Turner - I Still Believe (length: 44)                       | Two values with length 42 (can show either or both): The Divine Comedy - Tonight We Fly, Frank Turner - Be More Kind |
-| Every day songs              | The Swell Season - When Your Mind's Made Up | Frank Turner - Photosynthesis, The Divine Comedy - Tonight We Fly | <no songs listened to every day - must not be displayed>                                                             |
-| Top three genres             | Pop, Folk, Punk                             | Pop (Must not say 'top 3 genres' as there are not 3)              | Pop, Folk, House                                                                                                     |
+## Screenshot
+
+https://i.postimg.cc/ht8t7MXQ/Screenshot-2026-03-10-at-10-47-30.png
+
+https://i.postimg.cc/K4Sm1gFw/Screenshot-2026-03-09-at-23-34-14.png
+
+https://i.postimg.cc/Z5LyhJxW/Screenshot-2026-03-10-at-10-16-23.png
+
+## Accessibility
+The goal is for the site to achieve a Lighthouse accessibility score of 100.
+
+## Testing
+At least one meaningful function in the project includes unit tests using Jest.|
